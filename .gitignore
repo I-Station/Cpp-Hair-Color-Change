@@ -1,0 +1,46 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+build/
+libtorch
+opencv-mobile-3.4.15-ubuntu-1804
+ncnn-20210525-ubuntu-2004
+inputs/traced_starganGenerator.pt
+outputs/
+models
+opencv
+/*.pt
+ncnn-20210525-macos
+opencv2-2.framework
+libtorch
+build
+.vscode
