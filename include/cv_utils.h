@@ -37,16 +37,13 @@ public:
     void read_image(std::string path, cv::Mat& img);
 
     
-    
-
-   
-
-
-
 
 private:
         std::vector<double> norm_mean = {0.485, 0.456, 0.406};
         std::vector<double> norm_std = {0.229, 0.224, 0.225};
+        cv::Mat hsv_color;
+        cv::Mat hsv_aligned;
+        cv::Mat one_image= cv::Mat(512, 512, CV_8UC3, cv::Scalar(1.0,1.0,1.0));
 
 
 };

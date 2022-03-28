@@ -145,10 +145,9 @@ void Cv_utils::change_color(torch::Tensor output_network , std::vector<FaceObjec
 
 
         cv::Mat bgr_color(out_mask.rows, out_mask.cols, CV_8UC3, cv::Scalar(color[0],color[1],color[2]));
-        cv::Mat hsv_color;
+
         cv::cvtColor(bgr_color, hsv_color, cv::COLOR_BGR2HSV);
 
-        cv::Mat hsv_aligned;
         cv::cvtColor(faceobjects[i].aligned, hsv_aligned, cv::COLOR_BGR2HSV);
 
         cv::Mat hsv_aligned_channel[3];
@@ -163,10 +162,9 @@ void Cv_utils::change_color(torch::Tensor output_network , std::vector<FaceObjec
 
         cv::cvtColor(hsv_aligned, hsv_aligned, cv::COLOR_HSV2BGR);
         
-        cv::Mat one_image(out_mask.rows, out_mask.cols, CV_8UC3, cv::Scalar(1.0,1.0,1.0));
+        // cv::Mat one_image(out_mask.rows, out_mask.cols, CV_8UC3, cv::Scalar(1.0,1.0,1.0));
 
         faceobjects[i].changed = hsv_aligned.mul(out_mask) +  faceobjects[i].aligned.mul(one_image-out_mask) ;
-        // cv::imwrite("/Users/yasinmac/Desktop/yasin_/github/c-/aligned_changed.png", finall);
 
 
 
